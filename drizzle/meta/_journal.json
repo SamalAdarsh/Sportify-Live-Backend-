@@ -1,0 +1,13 @@
+{
+  "version": "7",
+  "dialect": "postgresql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "7",
+      "when": 1783941424827,
+      "tag": "0000_shiny_firebird",
+      "breakpoints": true
+    }
+  ]
+}
