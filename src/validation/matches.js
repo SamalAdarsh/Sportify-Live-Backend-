@@ -26,9 +26,11 @@ export const matchIdParamSchema = z.object({
 /**
  * Helper to validate ISO date strings
  */
-const isoDateSchema = z.string().refine((val) => !isNaN(Date.parse(val)), {
-  message: 'Invalid ISO date string',
-});
+// const isoDateSchema = z.string().refine((val) => !isNaN(Date.parse(val)), {
+//   message: 'Invalid ISO date string',
+// });
+
+const isoDateSchema = z.iso.datetime();
 
 /**
  * Schema for creating a new match
