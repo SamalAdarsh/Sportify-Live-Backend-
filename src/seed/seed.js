@@ -176,8 +176,12 @@ async function insertCommentary(matchId, entry) {
         // }),
         body: JSON.stringify(payload),
     });
+    // if (!response.ok) {
+    //     throw new Error(`Failed to create commentary: ${response.status}`);
+    // }
     if (!response.ok) {
-        throw new Error(`Failed to create commentary: ${response.status}`);
+        const errorDetails = await response.text();
+        throw new Error(`Failed to create commentary: ${response.status} -> ${errorDetails}`);
     }
     const responsePayload = await response.json();
     return responsePayload.data;

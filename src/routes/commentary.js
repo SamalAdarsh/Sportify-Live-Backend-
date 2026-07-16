@@ -59,6 +59,7 @@ commentaryRouter.post('/', async (req, res) => {
         const [result] = await db.insert(commentary).values({
             matchId: paramsResult.data.id,
             minute,
+            sequence: bodyResult.data.sequence ?? 0,
             ...rest
         }).returning();
 
@@ -68,7 +69,9 @@ commentaryRouter.post('/', async (req, res) => {
 
         res.status(201).json({ data: result });
     } catch (error) {
-        console.error('Failed to create commentary:', error);
+        console.log("DEBUG - DATABASE CRASH:", error);
+        console.dir(error, { depth: null });
+        // console.error('Failed to create commentary:', error);
         res.status(500).json({ error: 'Failed to create commentary.' });
     }
 });
