@@ -2,6 +2,7 @@ import AgentAPI from "apminsight";
 AgentAPI.config();
 
 import express from 'express';
+import cors from "cors";
 import {matchRouter} from "./routes/matches.js";
 import * as http from "node:http";
 import {attachWebSocketServer} from "./ws/server.js";
@@ -13,6 +14,11 @@ const HOST = process.env.HOST || '0.0.0.0';
 
 const app = express();
 const server = http.createServer(app);
+
+app.use(cors({
+  origin: '*',
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH'],
+}));
 
 app.use(express.json());
 
