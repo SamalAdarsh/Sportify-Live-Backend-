@@ -1,0 +1,52 @@
+{
+  "matches": [
+    {
+      "id": 1,
+      "sport": "cricket",
+      "homeTeam": "India",
+      "awayTeam": "Pakistan",
+      "homeScore": 168,
+      "awayScore": 142,
+      "startTime": "2026-07-16T11:00:00.000Z",
+      "endTime": "2026-07-16T15:00:00.000Z"
+    },
+    {
+      "id": 2,
+      "sport": "football",
+      "homeTeam": "Real Madrid",
+      "awayTeam": "Manchester City",
+      "homeScore": 2,
+      "awayScore": 3,
+      "startTime": "2026-07-16T19:00:00.000Z",
+      "endTime": "2026-07-16T21:00:00.000Z"
+    }
+  ],
+  "commentary": [
+    {
+      "matchId": 2,
+      "message": "⚽ GOAL! Kevin De Bruyne fires a rocket into the top-right corner! Assist by Erling Haaland.",
+      "eventType": "goal",
+      "team": "Manchester City",
+      "minute": 84
+    },
+    {
+      "matchId": 1,
+      "message": "🔴 OUT! WICKET! Bumrah strikes again! A blistering yorker crashing straight into the off-stump.",
+      "eventType": "wicket",
+      "team": "India"
+    },
+    {
+      "matchId": 2,
+      "message": "🟨 Yellow Card issued to Jude Bellingham for a late sliding tackle.",
+      "eventType": "card",
+      "team": "Real Madrid",
+      "minute": 79
+    },
+    {
+      "matchId": 1,
+      "message": "👏 Boundary! Six runs! Clean strike over long-on. That brings up the 50-run partnership.",
+      "eventType": "milestone",
+      "team": "India"
+    }
+  ]
+}
