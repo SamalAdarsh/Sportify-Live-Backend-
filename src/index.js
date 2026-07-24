@@ -8,6 +8,7 @@ import * as http from "node:http";
 import {attachWebSocketServer} from "./ws/server.js";
 import {securityMiddleware} from "./arcjet.js";
 import {commentaryRouter} from "./routes/commentary.js";
+import { authRouter } from "./routes/auth.js";
 
 const PORT = Number(process.env.PORT || 8000);
 const HOST = process.env.HOST || '0.0.0.0';
@@ -36,6 +37,7 @@ app.use((req, res, next) => {
 
 app.use('/matches',matchRouter);
 app.use('/matches/:id/commentary', commentaryRouter);
+app.use('/auth', authRouter);
 
 
 const{broadcastMatchCreated,broadcastCommentary} = attachWebSocketServer(server);
