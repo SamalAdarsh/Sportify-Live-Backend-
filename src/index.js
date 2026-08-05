@@ -9,6 +9,7 @@ import {attachWebSocketServer} from "./ws/server.js";
 import {securityMiddleware} from "./arcjet.js";
 import {commentaryRouter} from "./routes/commentary.js";
 import { authRouter } from "./routes/auth.js";
+import { startLivePolling } from './utils/liveScoreService.js';
 
 const PORT = Number(process.env.PORT || 8000);
 const HOST = process.env.HOST || '0.0.0.0';
@@ -43,6 +44,8 @@ app.use('/auth', authRouter);
 const{broadcastMatchCreated,broadcastCommentary} = attachWebSocketServer(server);
 app.locals.broadcastMatchCreated = broadcastMatchCreated;
 app.locals.broadcastCommentary = broadcastCommentary;
+
+startLivePolling(broadcastMatchCreated);
 
 server.listen(PORT, HOST, () => {
   const baseUrl = HOST === '0.0.0.0' ? `http://localhost:${PORT}` : `http://${HOST}:${PORT}`;
