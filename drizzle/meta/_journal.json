@@ -15,6 +15,13 @@
       "when": 1784904556784,
       "tag": "0001_gigantic_namor",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1785934463560,
+      "tag": "0002_silent_scarlet_spider",
+      "breakpoints": true
     }
   ]
 }
